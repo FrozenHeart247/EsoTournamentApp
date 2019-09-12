@@ -13,3 +13,7 @@ C:\EsoTournamentApp\EsoTournamentApp\EsoTournamentApp\obj\Debug\EsoTournamentApp
 C:\EsoTournamentApp\EsoTournamentApp\EsoTournamentApp\obj\Debug\EsoTournamentApp.csproj.CoreCompileInputs.cache
 C:\EsoTournamentApp\EsoTournamentApp\EsoTournamentApp\obj\Debug\EsoTournamentApp.exe
 C:\EsoTournamentApp\EsoTournamentApp\EsoTournamentApp\obj\Debug\EsoTournamentApp.pdb
+C:\EsoTournamentApp\EsoTournamentApp\EsoTournamentApp\bin\Debug\TournamentDB.db
+C:\EsoTournamentApp\EsoTournamentApp\EsoTournamentApp\bin\Debug\System.Data.SqlClient.dll
+C:\EsoTournamentApp\EsoTournamentApp\EsoTournamentApp\bin\Debug\System.Data.SQLite.dll
+C:\EsoTournamentApp\EsoTournamentApp\EsoTournamentApp\obj\Debug\EsoTournamentApp.csproj.CopyComplete
