@@ -97,7 +97,18 @@ namespace EsoTournamentApp
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(sqlQuery, m_dbConn);
             adapter.Fill(dTable);
             dgvViewer.DataContext = sqlQuery;
-            */
+            */// m_sqlCmd.CommandText=("SELECT * FROM TournamentDB");
+           // String c1= "SELECT * FROM TournamentDB";
+            //SQLiteCommand cmd1 = new SQLiteCommand(c1,m_dbConn);
+                        DataTable dTable = new DataTable();
+            String c1 = "SELECT * FROM Players";
+            using (SQLiteCommand cmd = new SQLiteCommand(c1, m_dbConn))
+            {
+                SQLiteCommand cmd1 = new SQLiteCommand(c1, m_dbConn);
+                SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+                da.Fill(dTable);
+                dgvViewer.ItemsSource = dTable.AsDataView();
+            }
         }
     }
 }

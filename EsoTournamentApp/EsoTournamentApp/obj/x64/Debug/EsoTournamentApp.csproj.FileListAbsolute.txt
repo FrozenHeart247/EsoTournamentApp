@@ -1,4 +1,3 @@
-C:\EsoTournamentApp\EsoTournamentApp\EsoTournamentApp\bin\x64\Debug\TournamentDB.db
 C:\EsoTournamentApp\EsoTournamentApp\EsoTournamentApp\bin\x64\Debug\EsoTournamentApp.exe.config
 C:\EsoTournamentApp\EsoTournamentApp\EsoTournamentApp\bin\x64\Debug\EsoTournamentApp.exe
 C:\EsoTournamentApp\EsoTournamentApp\EsoTournamentApp\bin\x64\Debug\EsoTournamentApp.pdb
