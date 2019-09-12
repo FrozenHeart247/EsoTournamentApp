@@ -91,7 +91,7 @@ namespace EsoTournamentApp
         private void btnLoadFile_Click(object sender, RoutedEventArgs e)
         {
             /*
-            DataTable dTable = new DataTable();
+            DataTable dTable = new DataTable();s
             String sqlQuery;
             sqlQuery = "SELECT * FROM TournamentDB";
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(sqlQuery, m_dbConn);
