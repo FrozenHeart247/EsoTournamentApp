@@ -9,8 +9,10 @@
     <Grid>
         <Button Name="btnOpenFile" Click="btnOpenFile_Click" Content="Connect" HorizontalAlignment="Left" Margin="109,347,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Name ="lbStatusText" Content="Label" HorizontalAlignment="Left" Margin="682,93,0,0" VerticalAlignment="Top"/>
-        <DataGrid Name ="dgvViewer" HorizontalAlignment="Left" Height="211" Margin="72,70,0,0" VerticalAlignment="Top" Width="546"/>
+        <DataGrid Name ="dgvViewer" HorizontalAlignment="Left" Height="211" Margin="72,70,0,0" VerticalAlignment="Top" Width="448"/>
         <Button Name ="loadDB" Click="btnLoadFile_Click" Content="LoadBD" HorizontalAlignment="Left" Margin="265,347,0,0" VerticalAlignment="Top" Width="75"/>
+        <Image Name="imageBox"  HorizontalAlignment="Left" Height="217" Margin="559,252,0,0" VerticalAlignment="Top" Width="177"/>
+        <Button Name="getPicBtn" Click="btnGetPic_Click" Content="getPicture" HorizontalAlignment="Left" Margin="604,514,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

@@ -16,7 +16,9 @@ using System.IO;
 using Microsoft.Win32;
 using System.Data.SQLite;
 using System.Data;
-
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 
 
@@ -28,9 +30,11 @@ namespace EsoTournamentApp
     public partial class MainWindow : Window
 
     {
+        DataSet ds;
         private String dbFileName;
         private SQLiteConnection m_dbConn;
         private SQLiteCommand m_sqlCmd;
+        private SQLiteDataReader myDataReader;
 
         public MainWindow()
         {
@@ -100,7 +104,7 @@ namespace EsoTournamentApp
             */// m_sqlCmd.CommandText=("SELECT * FROM TournamentDB");
            // String c1= "SELECT * FROM TournamentDB";
             //SQLiteCommand cmd1 = new SQLiteCommand(c1,m_dbConn);
-                        DataTable dTable = new DataTable();
+            DataTable dTable = new DataTable();
             String c1 = "SELECT * FROM Players";
             using (SQLiteCommand cmd = new SQLiteCommand(c1, m_dbConn))
             {
@@ -110,5 +114,78 @@ namespace EsoTournamentApp
                 dgvViewer.ItemsSource = dTable.AsDataView();
             }
         }
+
+        private void btnGetPic_Click(object sender, RoutedEventArgs e)
+        {
+            #region commentaryAndNotWorkingCode
+            /*
+            BitmapImage BImg = new BitmapImage();
+            Image Img = new Image();
+            m_sqlCmd = new SQLiteCommand("SELECT Build FROM Players WHERE Id = 1");
+            SQLiteDataReader myDataReader = SQLiteCommand.ExecuteReader();
+            */
+            /////////////////////////////////////////////--------/////////////
+            ///
+            /// 
+            /*
+            SQLiteCommand getPiccommand = new SQLiteCommand("SELECT Build FROM Players WHERE Id=1", m_dbConn); //Получение фотографии пользователя по ID.
+            SQLiteDataReader picReader1 = getPiccommand.ExecuteReader();
+            if (picReader1.Read())
+            {
+                byte[] imgData1 = (byte[])picReader1[0];
+                using (MemoryStream ms = new MemoryStream(imgData1))
+                {
+                    pictureBox. = ms;
+                    picReader1.Close();
+                }*/
+            //////////////////////??????????????????????????????//
+            ///
+            /*
+        DataTable dataTable = ds.Tables[0];
+
+        foreach (DataRow row in dataTable.Rows)
+        {
+
+                //Store binary data read from the database in a byte array
+                byte[] blob = (byte[])row[1];
+                MemoryStream stream = new MemoryStream();
+                stream.Write(blob, 0, blob.Length);
+                stream.Position = 0;
+
+                System.Drawing.Image img = System.Drawing.Image.FromStream(stream);
+                BitmapImage bi = new BitmapImage();
+                bi.BeginInit();
+
+                MemoryStream ms = new MemoryStream();
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                ms.Seek(0, SeekOrigin.Begin);
+                bi.StreamSource = ms;
+                bi.EndInit();
+                imageBox.Source = bi;
+                 }
+        */
+            #endregion
+            string query = "SELECT Build from Players WHERE Id=1";
+            SQLiteCommand cmd2 = new SQLiteCommand(query, m_dbConn);
+            SQLiteDataReader dataReader2 = cmd2.ExecuteReader();
+            while (dataReader2.Read())
+            {
+                Byte[] bindata = (Byte[])dataReader2["Build"];
+                MemoryStream strm = new MemoryStream();
+                strm.Write(bindata, 0, bindata.Length);
+                strm.Position = 0;
+                System.Drawing.Image img = System.Drawing.Image.FromStream(strm);
+                BitmapImage bi = new BitmapImage();
+                bi.BeginInit();
+                MemoryStream ms = new MemoryStream();
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                ms.Seek(0, SeekOrigin.Begin);
+                bi.StreamSource = ms;
+                bi.EndInit();
+                imageBox.Source = bi;
+            }
+
+        }
+
     }
 }
